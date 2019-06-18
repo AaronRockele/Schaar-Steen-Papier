@@ -4,7 +4,7 @@ let computerScore = 0;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div =  document.querySelector(".score-board");
-const result_p = document.querySelector("result > p")
+const result_p = document.querySelector(".result > p")
 const rock_div =  document.getElementById("Rock")
 const paper_div =  document.getElementById("Paper")
 const scissors_div =  document.getElementById("Scissors")
@@ -12,24 +12,34 @@ const scissors_div =  document.getElementById("Scissors")
 function convertToWord(letter){
     if (letter === "r") return "Rock";
     if (letter === "p") return "Paper";
-    return "scissors"
+    return "Scissors"
 }
 
 function win(userChoice, computerChoice) {
-    userScore++;
+    userScore++
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML =`${convertToWord(userChoice)} beats ${convertToword(computerChoice)} You win!"`;
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. you win!`;
     
 }
 
-function lose() {
-
-    console.log("LOSE");
+function lose(userChoice, computerChoice) {
+    computerScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallCompWord}. you lost!`;
+    
 }
 
-function draw() {
-    console.log("DRAW");
+function draw(userChoice, computerChoice) {
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} equals to ${convertToWord(computerChoice)}${smallCompWord}. So it's a draw`;
+    
 }
 
 function getComputerChoice(computerChoice) {
