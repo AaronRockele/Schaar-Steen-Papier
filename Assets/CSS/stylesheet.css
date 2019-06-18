@@ -43,7 +43,6 @@ header > h1 {
     position: absolute;
     top:30px;
     left:-20px;
-
 }
 #computer-label {
     position: absolute;
@@ -68,15 +67,10 @@ header > h1 {
 }
 
 .choice {
-    
-    /*border-radius: 50%;*/
     display: inline-block;
     margin: 0 20px;
     padding: 10px;
     transition: all 0.3s ease;
-
-    
-
 }
 
 .choice > img {
@@ -97,5 +91,4 @@ header > h1 {
     font-weight: bold;
     font-size: 20px;
     margin-top: 20px;
-
 }
