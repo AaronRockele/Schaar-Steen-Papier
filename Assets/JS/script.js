@@ -12,7 +12,7 @@ const scissors_div =  document.getElementById("Scissors")
 function convertToWord(letter){
     if (letter === "r") return "Rock";
     if (letter === "p") return "Paper";
-    return "Scissors"
+    return "Scissors";        
 }
 
 function win(userChoice, computerChoice) {
@@ -70,7 +70,6 @@ function game(userChoice) {
    
 }
 
-game();
 
 function main() {
 
